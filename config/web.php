@@ -43,14 +43,17 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'GET /api/v1/books/list' => '/api/list',
+                'POST /api/v1/books/update/<id:\d+>' => '/api/update',
+                'GET /api/v1/books/<id:\d+>' => '/api/view',
+                'DELETE /api/v1/books/<id:\d+>' => '/api/delete'
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
