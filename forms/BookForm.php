@@ -32,4 +32,14 @@ class BookForm extends Model
         }
         return $book->validate() && $book->save();
     }
+
+    /**
+     * @param Book $book
+     */
+    public function loadFromModel(Book $book): void
+    {
+        foreach (array_intersect($book->attributes, $this->attributes) as $name) {
+            $this->$name = $book->$name;
+        }
+    }
 }
